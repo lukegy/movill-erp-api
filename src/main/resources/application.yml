@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://test-rds-movill.cj5wzwbabohb.ap-northeast-2.rds.amazonaws.com:3306/movill?characterEncoding=utf8&characterSetResults=utf8&useUnicode=true&autoReconnect=true&allowMultiQueries=true&verifyServerCertificate=false&useSSL=false
+    url: jdbc:mysql://192.168.0.44:3306/movill?characterEncoding=utf8
+    sql-script-encoding: UTF-8
+    username: movill
+    password: gjgusan11Q
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 1000
+        globally_quoted_identifiers: true
+    open-in-view: false
+
+
+movill:
+  errors:
+    msg:
+      required:
+        params: 필수항목이 누락되었습니다
+  erp:
+    A:
+      resident:
+        url: http://localhost:8080/api/actuator/erpTest
+      car:
+        url: http://localhost:8080/api/actuator/erpCarTest
